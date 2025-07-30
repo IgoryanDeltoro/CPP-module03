@@ -1,19 +1,23 @@
 #include "ClapTrap.hpp"
 
+ClapTrap::ClapTrap() {
+    std::cout << "ClapTrap was calling a default constructor" << std::endl;
+};
+
 ClapTrap::ClapTrap(const std::string &name) :   _name(name),
                                                 _hitPoints(10),
                                                 _energyPoints(10),
                                                 _attackDamage(0) {
-    std::cout << "Calling a default constructor" << std::endl;
+    std::cout << "ClapTrap was calling a default constructor" << std::endl;
 }
 ClapTrap::ClapTrap(const ClapTrap &ct) :    _name(ct._name),
                                             _hitPoints(ct._hitPoints),
                                             _energyPoints(ct._energyPoints), 
                                             _attackDamage(ct._attackDamage) {
-    std::cout << "Calling the copy constructor" << std::endl;
+    std::cout << "ClapTrap was calling the copy constructor" << std::endl;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &ct) {
-    std::cout << "Calling the copy assignment operator" << std::endl;
+    std::cout << "ClapTrap was calling the copy assignment operator" << std::endl;
     if (this != &ct)
     {
         this->_name = ct._name;
