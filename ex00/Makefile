@@ -6,14 +6,15 @@ RM := rm -rf
 SRC := main.cpp ClapTrap.cpp
 OBJ := $(SRC:%.cpp=%.o)
 DEPS := $(OBJ:%.o=%.d)
-all: $(OBJ)
+all: $(TARGET)
 $(TARGET): $(OBJ)
-	$(CXX) $(FLAGS) $(OBJ) -o $(TARGET)
+	$(CXX) $(CFLAGS) $(OBJ) -o $(TARGET)
 %.o: %.cpp
 	$(CXX) $(CFLAGS) -MMD -MP -c $< -o $@
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(DEPS)
 fclean: clean
-	$(RM) $(TARGET) $(DEPS)
-.PHONY: all clean fclean
+	$(RM) $(TARGET)
+re: fclean all
+.PHONY: all clean fclean re
 -include $(DEPS)
