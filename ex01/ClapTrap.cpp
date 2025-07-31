@@ -1,23 +1,28 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-    std::cout << "ClapTrap was calling a default constructor" << std::endl;
+    _name = "Jack";
+    _hitPoints = 10;
+    _energyPoints = 10;
+    _attackDamage = 0;
+
+    std::cout << "ClapTrap " << _name << " called a default constructor\n";
 };
 
 ClapTrap::ClapTrap(const std::string &name) :   _name(name),
                                                 _hitPoints(10),
                                                 _energyPoints(10),
                                                 _attackDamage(0) {
-    std::cout << "ClapTrap was calling a default constructor" << std::endl;
+    std::cout << "ClapTrap " << _name << " called an explicit constructor\n";
 }
 ClapTrap::ClapTrap(const ClapTrap &ct) :    _name(ct._name),
                                             _hitPoints(ct._hitPoints),
                                             _energyPoints(ct._energyPoints), 
                                             _attackDamage(ct._attackDamage) {
-    std::cout << "ClapTrap was calling the copy constructor" << std::endl;
+    std::cout << "ClapTrap " << _name << " called the copy constructor\n";
+    *this = ct;
 }
 ClapTrap &ClapTrap::operator=(const ClapTrap &ct) {
-    std::cout << "ClapTrap was calling the copy assignment operator" << std::endl;
     if (this != &ct)
     {
         this->_name = ct._name;
@@ -25,6 +30,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &ct) {
         this->_energyPoints = ct._energyPoints;
         this->_attackDamage = ct._attackDamage;
     }
+    std::cout << "ClapTrap " << _name << " called the copy assignment operator\n";
     return *this;
 }
 ClapTrap::~ClapTrap() {
