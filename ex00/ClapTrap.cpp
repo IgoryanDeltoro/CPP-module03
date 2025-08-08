@@ -15,7 +15,7 @@ ClapTrap::ClapTrap(const ClapTrap &ct) :    _name(ct._name),
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &ct) {
-    std::cout << "The copy assignment operator was called\n";
+    std::cout << "The copy assignment operator was called.\n";
     if (this != &ct)
     {
         _name = ct._name;
@@ -35,7 +35,7 @@ void ClapTrap::attack(const std::string &target) {
     {
         _energyPoints--;
         std::cout << "ClapTrap " << _name << " attacks ";
-        std::cout << target << ", cousing " << _attackDamage;
+        std::cout << target << ", causing " << _attackDamage;
         std::cout << " points of damage!\n";
     }
     else 

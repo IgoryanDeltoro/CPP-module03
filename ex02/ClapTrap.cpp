@@ -4,14 +4,14 @@ ClapTrap::ClapTrap(const std::string &name) :   _name(name),
                                                 _hitPoints(10),
                                                 _energyPoints(10),
                                                 _attackDamage(0) {
-    std::cout << "ClapTrap " << _name << " called an explicit constructor\n";
+    std::cout << "ClapTrap " << _name << " called an explicit constructor.\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap &ct) :    _name(ct._name),
                                             _hitPoints(ct._hitPoints),
                                             _energyPoints(ct._energyPoints), 
                                             _attackDamage(ct._attackDamage) {
-    std::cout << "ClapTrap " << _name << " called the copy constructor\n";
+    std::cout << "ClapTrap " << _name << " called the copy constructor.\n";
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &ct) {
@@ -21,7 +21,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &ct) {
         this->_energyPoints = ct._energyPoints;
         this->_attackDamage = ct._attackDamage;
     }
-    std::cout << "ClapTrap " << _name << " called the copy assignment operator\n";
+    std::cout << "ClapTrap " << _name << " called the copy assignment operator.\n";
     return *this;
 }
 

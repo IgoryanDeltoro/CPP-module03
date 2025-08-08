@@ -14,16 +14,16 @@ int main()
 
     ClapTrap b(a);
     b.attack("Mario");
-    a.takeDamage(3);
-    a.beRepaired(2);
+    b.takeDamage(3);
+    b.beRepaired(2);
 
     std::cout << "\n============ The copy asignment operator! ===============\n\n";
 
     ClapTrap c("Rodrigo");
     c = a;
-    b.attack("Mario");
-    a.takeDamage(3);
-    a.beRepaired(2);
+    c.attack("Mario");
+    c.takeDamage(3);
+    c.beRepaired(2);
 
     return 0;
 }
