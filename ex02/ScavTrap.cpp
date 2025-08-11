@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
-    std::cout << "ScavTrap " << _name << " called an explicit constructor.\n";
+    std::cout << "ScavTrap " << _name << " called the parameterized constructor.\n";
     _hitPoints = 100;
     _energyPoints = 50;
     _attackDamage = 20;

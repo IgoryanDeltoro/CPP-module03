@@ -4,7 +4,7 @@ ClapTrap::ClapTrap(const std::string &name) :   _name(name),
                                                 _hitPoints(10),
                                                 _energyPoints(10),
                                                 _attackDamage(0) {
-    std::cout << "ClapTrap " << _name << " called an explicit constructor\n";
+    std::cout << "ClapTrap " << _name << " called the parameterized constructor\n";
 }
 
 ClapTrap::ClapTrap(const ClapTrap &ct) :    _name(ct._name),
