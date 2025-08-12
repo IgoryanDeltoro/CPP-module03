@@ -2,17 +2,19 @@
 #define DIAMODNTRAP_HPP
 
 # include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include "FragTrap.hpp"
 
 class DiamondTrap: public ScavTrap, public FragTrap {
     private:
         std::string _name;
 
     public:
-        DiamondTrap();
+        DiamondTrap(const std::string &name);
         DiamondTrap(const DiamondTrap &dt);
         ~DiamondTrap();
         DiamondTrap &operator=(const DiamondTrap &dt);
+
+        void whoAmI();
 };
 
 #endif

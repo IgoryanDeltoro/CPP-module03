@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(std::string &name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
+{
     std::cout << "FragTrap " << _name << " called the parameterized comstructor.\n";
     _hitPoints = 100;
     _energyPoints = 100;
