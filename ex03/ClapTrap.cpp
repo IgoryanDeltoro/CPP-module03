@@ -60,7 +60,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
     if (_energyPoints > 0 && _hitPoints > 0) {
         _energyPoints--;
         _hitPoints += amount;
-        std::cout   << "ClapTrap repaired his health for ";
+        std::cout   << "ClapTrap " << _name <<  " is repaired his health for ";
         std::cout << amount << " points! Remaining HP: ";
         std::cout << _hitPoints << std::endl;
     } else {
