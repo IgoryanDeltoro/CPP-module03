@@ -6,7 +6,7 @@ void attack(ClapTrap *ct) {
     ct->beRepaired(25);
 }
 
-void attack_without_pointer(ClapTrap ct)
+void attack_wit_slicing(ClapTrap ct)
 {
     ct.attack("PolyTarget");
     ct.takeDamage(50);
@@ -15,7 +15,15 @@ void attack_without_pointer(ClapTrap ct)
 
 int main()
 {
-    std::cout << "\n========== DiamondTrap Basic Test ==========\n\n";
+
+    std::cout << "\n========== DiamondTrap the default constructor ==========\n\n";
+    DiamondTrap t;
+    t.attack("TargetD");
+    t.takeDamage(42);
+    t.beRepaired(10);
+    t.whoAmI();
+
+    std::cout << "\n========== DiamondTrap the parameterized  constructor! ==========\n\n";
     DiamondTrap dt("Shiny");
     dt.attack("TargetD");
     dt.takeDamage(42);
@@ -54,7 +62,7 @@ int main()
     p.attack("PolyTarget");
     p.takeDamage(50);
     p.beRepaired(25);
-    attack_without_pointer(p);
+    attack_wit_slicing(p);
 
     std::cout << "\n========== End of Tests ==========\n\n";
     return 0;

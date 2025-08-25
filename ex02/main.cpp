@@ -1,36 +1,42 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
     std::cout << "\n============ The derived class FragTrap was created! ===============\n";
-    std::cout << "============ The explicit constructor! ===============\n\n";
 
-    ScavTrap d("Hulio");
-    d.attack("Ant");
-    d.takeDamage(20);
-    d.takeDamage(20);
-    d.takeDamage(20);
-    d.takeDamage(20);
-    d.attack("Ant");
+    std::cout << "============ The default constructor! ===============\n\n";
 
-    d.beRepaired(2);
+    FragTrap s;
+    s.attack("Nothing");
+    s.takeDamage(3);
+    s.beRepaired(2);
+    s.highFivesGuys();
+
+    std::cout << "\n============ The parameterized  constructor! ===============\n\n";
+
+    FragTrap a("Arnold");
+    a.attack("Antonio");
+    a.takeDamage(3);
+    a.beRepaired(2);
+    a.highFivesGuys();
 
     std::cout << "\n============ The copy constructor! ===============\n\n";
 
-    ScavTrap f(d);
-    f.attack("Marinesko");
-    f.takeDamage(3);
-    f.takeDamage(25);
-    f.attack("Marinesko");
-    f.beRepaired(2);
+    FragTrap b(a);
+    b.attack("Mario");
+    b.takeDamage(3);
+    b.beRepaired(2);
+    b.highFivesGuys();
 
     std::cout << "\n============ The copy asignment operator! ===============\n\n";
 
-    ScavTrap e("Roger");
-    e = d;
-    e.attack("Baloo");
-    e.takeDamage(3);
-    e.beRepaired(2);
+    FragTrap c("Rodrigo");
+    c = a;
+    c.attack("Mario");
+    c.takeDamage(3);
+    c.beRepaired(2);
+    c.highFivesGuys();
 
+    std::cout << "\n========== End of Tests ==========\n\n";
     return 0;
 }

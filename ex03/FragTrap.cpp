@@ -1,7 +1,13 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(const std::string &name) : ClapTrap(name)
-{
+FragTrap::FragTrap() : ClapTrap() {
+    std::cout << "FragTrap " << _name << " called the default constructor.\n";
+    _hitPoints = 100;
+    _energyPoints = 100;
+    _attackDamage = 30;
+}
+
+FragTrap::FragTrap(const std::string &name) : ClapTrap(name) {
     std::cout << "FragTrap " << _name << " called the parameterized constructor.\n";
     _hitPoints = 100;
     _energyPoints = 100;
@@ -29,15 +35,12 @@ void FragTrap::highFivesGuys(void) {
 
 void FragTrap::attack(const std::string &target)
 {
-    if (_energyPoints > 0 && _hitPoints > 0)
-    {
+    if (_energyPoints > 0 && _hitPoints > 0) {
         _energyPoints--;
         std::cout << "FragTrap " << _name << " attacks ";
         std::cout << target << ", causing " << _attackDamage;
         std::cout << " points of damage!\n";
-    }
-    else
-    {
+    } else {
         std::cout << "FragTrap " << _name;
         std::cout << " has no energy or is dead and cannot attack.\n";
     }

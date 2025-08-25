@@ -2,11 +2,19 @@
 
 int main()
 {
-    std::cout << "\n============ The explicit constractor! ===============\n\n";
+    std::cout << "\n============ The derived class ClapTrap was created! ===============\n";
 
-    ClapTrap a("Antonio");
+    std::cout << "============ The default constructor! ===============\n\n";
 
-    a.attack("Sergio");
+    ClapTrap s;
+    s.attack("Nothing");
+    s.takeDamage(3);
+    s.beRepaired(2);
+
+    std::cout << "\n============ The parameterized  constructor! ===============\n\n";
+
+    ClapTrap a("Arnold");
+    a.attack("Antonio");
     a.takeDamage(3);
     a.beRepaired(2);
 
